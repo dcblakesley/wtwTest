@@ -1,0 +1,48 @@
+﻿Hi David,
+
+
+Thanks for taking the time to come in and interview with us! We would like to invite you to complete our second interview project. Listed below are the requirements. 
+If anything is not clear enough, feel free to ask questions along the way. Plan on about 90 minutes for the meeting.
+
+
+Requirements:
+
+1. Write an IoC (Inversion of Control) container, also known as a Dependency Injection container.
+
+2. The container must allow you to register types.
+		Example: container.Register<ICalculator, Calculator>()
+
+3. The container must be aware and control object lifecycle for transient objects (a new instance is created for each request), and singleton objects (the same instance is returned for each request).
+		Example: container.Register<ICalculator, Calculator>(LifecycleType.Transient), or container.Register<ICalculator, Calculator>(LifecycleType.Singleton)
+
+3(also). The default lifecycle for an object should be transient
+
+4. You must be able to resolve registered types through the container
+		Example: container.Resolve<ICalculator>()
+
+5. If you try to resolve a type that the container is unaware of it should throw an informative exception
+
+6. When resolving from the container for a registered type, if that type has constructor arguments which are also registered types the container should inject the instances into the constructor appropriately (this is where dependency injection applies).
+		Example Constructor: public UsersController(ICalculator calculator,  IEmailService emailService). If all 3 types for the controller, calculator, and email service are registered you should be able to resolve an instance of the UsersController.
+
+7. You must write tests for all of this behavior using xUnit.
+
+8. With a simple new ASP.NET MVC Web Application, wire things up so your Controllers can be constructed using your containers. There are many well documented ways to accomplish this with other containers.
+
+9. You must use git for source control and push your code to github.com. Please send me the link to your repository at least 1 day before the second interview.
+
+10. General Suggestion: Don't let the overall tasks overwhelm you. Break everything into smaller pieces that build up to the larger solution.
+
+11. Be prepared to answer a question along the lines of… How would your code change if given the requirement to add a new lifecycle (ThreadStatic for instance)? Would you be required to add new code, or modify existing code?
+
+We recognize that there are many example implementations of IoC containers that can be found online.
+These can be helpful resources for any research you might need to do into this topic. However, we encourage you to make the solution your own. We want to see how you would solve this problem.
+
+Your interview will be at the Sandy office at 9980 S 300 W Suite 200, Sandy, UT 84070. Just ask for me at the front desk on the second floor.
+
+We're looking forward to seeing your solution! Please let me know if you have any questions.
+
+ 
+
+Good luck!
+
